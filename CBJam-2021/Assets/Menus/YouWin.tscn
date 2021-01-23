@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://YouWin.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 128
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 3 )
+
+[node name="YouWin" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 1056.0
+margin_bottom = 624.0
+color = Color( 0.309804, 0.603922, 0.796078, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YouWin" type="Label" parent="."]
+margin_top = 128.0
+margin_right = 1024.0
+margin_bottom = 283.0
+custom_fonts/font = SubResource( 1 )
+text = "You Win"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Math" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 384.0
+margin_right = 992.0
+margin_bottom = 416.0
+custom_fonts/font = SubResource( 2 )
+text = "The Mathamachicken got it right!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

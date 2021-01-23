@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Characters/Player/player_sprite_frames.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://Assets/Characters/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Audio/Jump.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/Audio/Dead.wav" type="AudioStream" id=4]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 22.7887
+height = 5.78825
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 1 )
+animation = "Standing"
+playing = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SoundJump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -15.0
+
+[node name="SoundDie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

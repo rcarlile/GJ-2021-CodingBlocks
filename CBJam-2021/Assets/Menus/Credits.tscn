@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Credits.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Fonts/BalsamiqSans-Bold.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 36
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="Credits" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+margin_left = -16.0
+margin_top = -16.0
+margin_right = 1040.0
+margin_bottom = 608.0
+color = Color( 0.301961, 0.705882, 0.92549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="Label" parent="."]
+margin_left = 16.0
+margin_right = 382.0
+margin_bottom = 326.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.192157, 0.207843, 0.458824, 1 )
+text = "Credits
+Code: rcarlile
+Graphics: rcarlile
+Sound: rcarlile
+Music: rcarlile
+Font: Michael Angeles
+Tutorial: BornCG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Software" type="Label" parent="."]
+margin_left = 560.0
+margin_right = 1008.0
+margin_bottom = 279.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.192157, 0.207843, 0.458824, 1 )
+text = "Software
+Game Engine: Godot
+Graphics: Aseprite
+Sound Effects: Bfxr
+Music: Korg Kaossilator S2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="."]
+margin_left = 576.0
+margin_top = 240.0
+margin_right = 896.0
+margin_bottom = 304.0
+custom_fonts/font = SubResource( 3 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Notes" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 326.0
+margin_right = 1008.0
+margin_bottom = 554.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Notes: This is my first game jam, actually first game. The first thing a dev does when trying
+something new is to start with a working example. I thought using a example project would
+be cheating, so I followed a tutorial to a MVP. I then went back and refined ideas and
+assets. I had a blast doing this. I am a Sr. developer for a fortune 100 company, and mostly
+develop in C#, Angular, and SQL Server. I started listing to the pod cast a while back and
+have really enjoyed it. Keep the episodes comming.
+Broken: BG popin, player sprite flipping, double get coins, my will, and more...."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="URL" type="Label" parent="."]
+margin_left = 16.0
+margin_top = 560.0
+margin_right = 1008.0
+margin_bottom = 590.0
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+text = "https://github.com/rcarlile/GJ-2021-CodingBlocks"
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
